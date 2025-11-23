@@ -7,20 +7,15 @@ This project automates online research by retrieving high-quality passages from 
 
 # ⭐ Features
 
-* **Natural Language Query**
-  Ask any research question — no special formatting required.
+* **Natural Language Query** : Ask any research question — no special formatting required.
 
-* **Automated Web Search**
-  Uses DuckDuckGo Search (ddgs) to gather multiple sources.
+* **Automated Web Search** : Uses DuckDuckGo Search (ddgs) to gather multiple sources.
 
-* **Extractive RAG Summaries**
-  Generates a clean summary using only the top-ranked passage.
+* **Extractive RAG Summaries** : Generates a clean summary using only the top-ranked passage.
 
-* **Top Passage Retrieval**
-  Shows a single best passage determined by similarity score.
+* **Top Passage Retrieval** : Shows a single best passage determined by similarity score.
 
-* **Minimal & Professional Streamlit UI**
-  Clean interface suitable for showcasing to recruiters.
+* **Minimal & Professional Streamlit UI** : Clean interface suitable for showcasing to recruiters.
 
 ---
 
