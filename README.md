@@ -83,9 +83,8 @@ This project automates online research by retrieving high-quality passages from 
 
 # 🖼️ Streamlit App 
 
-```
-![App Screenshot](path_to_your_screenshot.png)
-```
+![App Screenshot](AI_Research_Assistant.png)
+
 
 
 
