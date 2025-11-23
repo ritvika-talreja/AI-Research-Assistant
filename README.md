@@ -88,8 +88,6 @@ This project automates online research by retrieving high-quality passages from 
 
 # 🖼️ Streamlit App 
 
-*(Place your screenshot here inside the README)*
-
 ```
 ![App Screenshot](path_to_your_screenshot.png)
 ```
@@ -116,26 +114,3 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-
----
-
-# 🧪 Usage
-
-1. Enter your research question.
-2. Click **Generate Insights**.
-3. The tool will:
-
-   * Search the web
-   * Extract and rank passages
-   * Generate an extractive summary
-4. You’ll see the:
-
-   * Summary
-   * Top passage
-   * Source link
-
----
-
-
-
-Just tell me!
