@@ -1,102 +1,117 @@
-# AI Research Agent
+# AI Research Assistant
 
-A **RAG-style AI Web Researcher** built with **Streamlit**, **DuckDuckGo search**, and **Sentence Transformers**. The agent automates research by retrieving relevant passages from the web, ranking them with embeddings, and generating concise summaries in real-time.
-
----
-
-## Features
-
-* **Natural Language Query:** Ask questions in plain English.
-* **Web Search Automation:** Searches multiple sources using DuckDuckGo.
-* **Contextual Summarization:** Embeddings rank and summarize top passages.
-* **Top Passage Retrieval:** Returns top 5 most relevant passages with URLs.
-* **Streamlit Interface:** User-friendly web app to interact with the AI.
+A **RAG-style AI Web Researcher** built with **Streamlit**, **DuckDuckGo Search**, and **Sentence Transformers**.
+This project automates online research by retrieving high-quality passages from the web, ranking them using semantic similarity, and generating an **extractive summary** from the most relevant source.
 
 ---
 
-## Tech Stack
+# ⭐ Features
 
-* **Python**
-* **Streamlit** for web UI
-* **DuckDuckGo Search API (`ddgs`)** for web scraping
-* **BeautifulSoup** for HTML parsing
-* **Sentence Transformers (`all-MiniLM-L6-v2`)** for embeddings
-* **NumPy** for cosine similarity calculations
+* **Natural Language Query**
+  Ask any research question — no special formatting required.
+
+* **Automated Web Search**
+  Uses DuckDuckGo Search (ddgs) to gather multiple sources.
+
+* **Extractive RAG Summaries**
+  Generates a clean summary using only the top-ranked passage.
+
+* **Top Passage Retrieval**
+  Shows a single best passage determined by similarity score.
+
+* **Minimal & Professional Streamlit UI**
+  Clean interface suitable for showcasing to recruiters.
 
 ---
 
-## Architecture Overview
+# 🧠 Tech Stack
+
+* Python
+* Streamlit
+* DuckDuckGo Search (ddgs)
+* BeautifulSoup
+* SentenceTransformers
+* NumPy
+* OpenAI / LLM for summarization
+
+---
+
+# 🏗️ Architecture Overview
 
 ```
-          +---------------------+
-          |   User Interface    |
-          |     (Streamlit)     |
-          +---------+-----------+
-                    |
-                    v
-          +---------------------+
-          |   Query Processing  |
-          | - Input sanitization|
-          | - Text preprocessing|
-          +---------+-----------+
-                    |
-                    v
-          +---------------------+
-          |   Web Search Agent  |
-          | - DuckDuckGo Search |
-          | - URL extraction   |
-          | - HTML text fetch  |
-          +---------+-----------+
-                    |
-                    v
-          +---------------------+
-          |  Passage Processing |
-          | - Chunking texts    |
-          | - Sentence splitting|
-          +---------+-----------+
-                    |
-                    v
-          +---------------------+
-          | Embedding & Ranking |
-          | - Sentence embeddings|
-          | - Cosine similarity |
-          | - Top-N ranking     |
-          +---------+-----------+
-                    |
-                    v
-          +---------------------+
-          |   Summarization     |
-          | - Top sentences     |
-          | - Concise summary   |
-          +---------+-----------+
-                    |
-                    v
-          +---------------------+
-          |   Output to UI      |
-          | - Summary           |
-          | - Top passages      |
-          | - Scores & URLs     |
-          +---------------------+
+        ┌────────────────────────┐
+        │     Streamlit UI       │
+        └───────────┬────────────┘
+                    │ User Query
+                    ▼
+        ┌────────────────────────┐
+        │   Query Preprocessor    │
+        └───────────┬────────────┘
+                    │
+                    ▼
+        ┌────────────────────────┐
+        │   Web Search Module     │
+        │  (DuckDuckGo + BS4)     │
+        └───────────┬────────────┘
+                    │ Raw Web Data
+                    ▼
+        ┌────────────────────────┐
+        │  Passage Chunking       │
+        │  & Sentence Splitting   │
+        └───────────┬────────────┘
+                    │ Passages
+                    ▼
+        ┌────────────────────────┐
+        │  Embedding Generator    │
+        │ (SentenceTransformers)  │
+        └───────────┬────────────┘
+                    │ Vectors
+                    ▼
+        ┌────────────────────────┐
+        │ Similarity Ranker       │
+        │ (Cosine Similarity)     │
+        └───────────┬────────────┘
+                    │ Best Passage
+                    ▼
+        ┌────────────────────────┐
+        │ Extractive Summarizer   │
+        │ (LLM or Rule-based)     │
+        └───────────┬────────────┘
+                    │ Final Output
+                    ▼
+        ┌────────────────────────┐
+        │     UI Output Panel     │
+        └────────────────────────┘
 ```
 
 ---
 
-## Installation
+# 🖼️ Streamlit App 
 
-1. Clone the repository:
+*(Place your screenshot here inside the README)*
+
+```
+![App Screenshot](path_to_your_screenshot.png)
+```
+
+
+
+# 📦 Installation
+
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Research-Agent.git
-cd AI-Research-Agent
+git clone https://github.com/yourusername/AI-Research-Assistant.git
+cd AI-Research-Assistant
 ```
 
-2. Install dependencies:
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the Streamlit app:
+### 3. Run the Streamlit app
 
 ```bash
 streamlit run app.py
@@ -104,11 +119,23 @@ streamlit run app.py
 
 ---
 
-## Usage
+# 🧪 Usage
 
-1. Enter your research question in the input box.
-2. Click **Run Research**.
-3. View the **extractive summary** and **top relevant passages** along with their sources.
+1. Enter your research question.
+2. Click **Generate Insights**.
+3. The tool will:
+
+   * Search the web
+   * Extract and rank passages
+   * Generate an extractive summary
+4. You’ll see the:
+
+   * Summary
+   * Top passage
+   * Source link
+
+---
 
 
 
+Just tell me!
